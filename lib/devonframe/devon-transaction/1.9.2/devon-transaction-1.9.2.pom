@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>devonframe</groupId>
+    <artifactId>devon-framework</artifactId>
+    <version>1.9.2</version>
+  </parent>
+  <name>devon-transaction</name>
+  <artifactId>devon-transaction</artifactId>
+  <dependencies>
+
+	<dependency>
+		<groupId>devonframe</groupId>
+		<artifactId>devon-log</artifactId>
+		<version>${devonframe.version}</version>
+	</dependency>
+
+	<!-- Spring -->
+ 		<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+	</dependency>
+
+	<!-- javax -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+   		<artifactId>javax.servlet.jsp-api</artifactId>
+		<scope>provided</scope>
+	</dependency>
+
+	<!--  test  -->
+	<!-- DevOnFrame -->
+	<dependency>
+		<groupId>devonframe</groupId>
+		<artifactId>devon-dataaccess</artifactId>
+		<version>${devonframe.version}</version>
+		<scope>test</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.mariadb.jdbc</groupId>
+		<artifactId>mariadb-java-client</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.derby</groupId>
+		<artifactId>derby</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.hsqldb</groupId>
+		<artifactId>hsqldb</artifactId>
+	</dependency>
+  </dependencies>
+
+</project>

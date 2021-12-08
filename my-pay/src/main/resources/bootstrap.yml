@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    config:
+      uri: http://lena-manager.lena.svc.cluster.local:7700/lena-embed-manager/config

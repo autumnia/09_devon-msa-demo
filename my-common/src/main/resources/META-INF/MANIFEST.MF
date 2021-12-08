@@ -1,0 +1,115 @@
+Manifest-Version: 1.0
+Class-Path: devon-excel-1.9.3.jar commons-lang-2.2.jar aspectjweaver-1.9
+ .5.jar tiles-template-3.0.8.jar devon-transaction-1.9.3.jar spring-clou
+ d-function-context-3.0.10.RELEASE.jar typetools-0.6.2.jar spring-boot-t
+ est-2.3.1.RELEASE.jar guava-29.0-jre.jar devon-boot-log4j2-1.2.jar spri
+ ng-cloud-starter-config-2.2.5.RELEASE.jar assertj-core-3.16.1.jar httpc
+ lient-4.5.12.jar devon-fileupload-1.9.3.jar jakarta.el-3.0.3.jar spring
+ -tx-5.2.7.RELEASE.jar mybatis-3.5.0.jar log4j-slf4j-impl-2.13.3.jar com
+ mons-digester-2.0.jar feign-core-10.10.1.jar springfox-swagger-ui-2.9.2
+ .jar ehcache-2.10.6.jar spring-messaging-5.2.7.RELEASE.jar spring-cloud
+ -starter-stream-kafka-3.0.8.RELEASE.jar netty-resolver-4.1.50.Final.jar
+  objenesis-2.6.jar curvesapi-1.05.jar commons-codec-1.14.jar thymeleaf-
+ spring5-3.0.11.RELEASE.jar mariadb-java-client-1.5.7.jar micrometer-cor
+ e-1.5.1.jar hibernate-validator-6.1.5.Final.jar spring-security-crypto-
+ 5.3.3.RELEASE.jar spring-integration-kafka-3.2.1.RELEASE.jar log4j-api-
+ 2.13.3.jar spring-boot-starter-tomcat-2.3.1.RELEASE.jar commons-digeste
+ r-1.8.1.jar lena-embed-boot-1.3.1.2.jar devon-core-1.9.3.jar devon-boot
+ -management-saga-common-1.0-SNAPSHOT.jar jackson-core-2.11.0.jar jose4j
+ -0.7.6.jar commons-text-1.6.jar thymeleaf-3.0.11.RELEASE.jar devon-mail
+ -1.9.3.jar springfox-swagger-common-2.9.2.jar byte-buddy-agent-1.10.11.
+ jar spring-boot-starter-logging-2.3.1.RELEASE.jar json-smart-2.3.jar ti
+ les-freemarker-3.0.8.jar swagger-models-1.5.20.jar stax-api-1.0.jar gro
+ ovy-2.5.12.jar junit-jupiter-api-5.7.0.jar json-path-2.4.0.jar spring-c
+ loud-stream-binder-kafka-core-3.0.8.RELEASE.jar listenablefuture-9999.0
+ -empty-to-avoid-conflict-with-guava.jar devon-boot-starter-log4j2-1.2.j
+ ar spring-boot-starter-2.3.1.RELEASE.jar netty-handler-proxy-4.1.50.Fin
+ al.jar thymeleaf-expression-processor-1.1.3.jar poi-4.0.1.jar spring-bo
+ ot-starter-webflux-2.3.1.RELEASE.jar tiles-jsp-3.0.8.jar rocksdbjni-5.1
+ 8.3.jar jakarta.activation-api-1.2.2.jar unbescape-1.1.6.RELEASE.jar sp
+ ring-context-5.2.7.RELEASE.jar spring-context-support-5.2.7.RELEASE.jar
+  spring-cloud-netflix-archaius-2.2.5.RELEASE.jar junit-platform-commons
+ -1.6.2.jar log4j-jul-2.13.3.jar jul-to-slf4j-1.7.30.jar spring-test-5.2
+ .7.RELEASE.jar spring-boot-actuator-autoconfigure-2.3.1.RELEASE.jar dev
+ on-validator-1.9.3.jar jackson-databind-2.11.0.jar freemarker-2.3.30.ja
+ r swagger-annotations-1.5.20.jar gson-2.8.6.jar commons-fileupload-1.4.
+ jar spring-boot-starter-actuator-2.3.1.RELEASE.jar cglib-nodep-3.2.10.j
+ ar spring-webmvc-5.2.7.RELEASE.jar devon-boot-thymeleaf-1.2.jar bcpkix-
+ jdk15on-1.64.jar asm-5.0.4.jar kafka-clients-2.5.0.jar jackson-datatype
+ -jdk8-2.11.0.jar spring-boot-configuration-processor-2.3.1.RELEASE.jar 
+ devon-boot-autoconfigure-1.2.jar spring-cloud-netflix-ribbon-2.2.5.RELE
+ ASE.jar jakarta.xml.bind-api-2.3.3.jar devon-boot-1.2.jar commons-compr
+ ess-1.18.jar commons-validator-1.6.jar ognl-3.1.12.jar classmate-1.5.1.
+ jar logback-core-1.2.3.jar spring-web-5.2.7.RELEASE.jar antlr-2.7.7.jar
+  snappy-java-1.1.7.3.jar feign-form-spring-3.8.0.jar connect-json-2.5.0
+ .jar spring-cloud-function-core-3.0.10.RELEASE.jar tiles-request-veloci
+ ty-1.0.7.jar junit-platform-engine-1.6.2.jar httpcore-4.4.13.jar common
+ s-io-2.2.jar nio-multipart-parser-1.1.0.jar spring-boot-starter-reactor
+ -netty-2.3.1.RELEASE.jar LatencyUtils-2.0.3.jar xmlbeans-3.0.2.jar thym
+ eleaf-layout-dialect-2.4.1.jar spring-cloud-config-client-2.2.5.RELEASE
+ .jar mockito-junit-jupiter-3.3.3.jar devon-boot-saga-core-1.0-SNAPSHOT.
+ jar tiles-velocity-3.0.8.jar jcl-over-slf4j-1.7.30.jar devon-web-1.9.3.
+ jar lz4-java-1.7.1.jar failureaccess-1.0.1.jar junit-jupiter-engine-5.7
+ .0.jar jackson-datatype-jsr310-2.11.0.jar junit-jupiter-params-5.6.2.ja
+ r logback-classic-1.2.3.jar jsonassert-1.5.0.jar attoparser-2.0.5.RELEA
+ SE.jar spring-jdbc-5.2.7.RELEASE.jar log4j-core-2.13.3.jar devon-boot-m
+ anagement-core-1.0-SNAPSHOT.jar tiles-request-jsp-1.0.7.jar spring-clou
+ d-stream-binder-kafka-3.0.8.RELEASE.jar feign-form-3.8.0.jar tiles-requ
+ est-freemarker-1.0.7.jar spring-modules-validation-0.8.jar spring-boot-
+ starter-json-2.3.1.RELEASE.jar tiles-core-3.0.8.jar snakeyaml-1.26.jar 
+ spring-boot-starter-lena-1.3.1.2.jar spring-boot-starter-log4j2-2.3.1.R
+ ELEASE.jar HikariCP-3.4.5.jar spring-beans-5.2.7.RELEASE.jar HdrHistogr
+ am-2.1.12.jar j2objc-annotations-1.3.jar tiles-ognl-3.0.8.jar android-j
+ son-0.0.20131108.vaadin1.jar kafka-streams-2.5.0.jar spring-plugin-meta
+ data-1.2.0.RELEASE.jar mybatis-spring-2.0.0.jar connect-api-2.5.0.jar n
+ etty-transport-native-epoll-4.1.50.Final-linux-x86_64.jar spring-cloud-
+ stream-3.0.8.RELEASE.jar tiles-request-api-1.0.7.jar commons-lang-2.4.j
+ ar spring-webflux-5.2.7.RELEASE.jar tiles-mvel-3.0.8.jar netty-codec-ht
+ tp-4.1.50.Final.jar spring-boot-starter-web-2.3.1.RELEASE.jar commons-b
+ eanutils-1.9.3.jar commons-collections-3.2.2.jar spring-cloud-context-2
+ .2.5.RELEASE.jar ognl-2.7.3.jar spring-cloud-starter-2.2.5.RELEASE.jar 
+ reactor-core-3.3.6.RELEASE.jar mvel2-2.0.11.jar javax.json.bind-api-1.0
+ .jar spring-security-rsa-1.0.9.RELEASE.jar spring-boot-starter-test-2.3
+ .1.RELEASE.jar tiles-request-servlet-1.0.7.jar nio-stream-storage-1.1.3
+ .jar reactive-streams-1.0.3.jar js-1.7R2.jar tomcat-embed-core-9.0.36.j
+ ar reactor-netty-0.9.8.RELEASE.jar spring-aop-5.2.7.RELEASE.jar spring-
+ cloud-starter-openfeign-3.0.2.jar spring-integration-jmx-5.3.1.RELEASE.
+ jar commons-configuration2-2.4.jar netty-codec-http2-4.1.50.Final.jar c
+ ommons-fileupload-1.3.3.jar spring-kafka-2.5.2.RELEASE.jar jakarta.vali
+ dation-api-2.0.2.jar slf4j-api-1.7.30.jar accessors-smart-1.2.jar jakar
+ ta.annotation-api-1.3.5.jar spring-boot-test-autoconfigure-2.3.1.RELEAS
+ E.jar devon-boot-starter-thymeleaf-1.2.jar spring-boot-starter-cache-2.
+ 3.1.RELEASE.jar tiles-servlet-3.0.8.jar tiles-api-3.0.8.jar javax.mail-
+ 1.6.2.jar jsr305-3.0.2.jar netty-transport-native-unix-common-4.1.50.Fi
+ nal.jar velocity-tools-2.0.jar spring-boot-devtools-2.3.1.RELEASE.jar n
+ etty-codec-socks-4.1.50.Final.jar apiguardian-api-1.1.0.jar spring-boot
+ -autoconfigure-2.3.1.RELEASE.jar spring-boot-2.3.1.RELEASE.jar netty-bu
+ ffer-4.1.50.Final.jar commons-math3-3.6.1.jar devon-log-1.9.3.jar javas
+ sist-3.20.0-GA.jar springfox-swagger2-2.9.2.jar jackson-annotations-2.1
+ 1.0.jar poi-ooxml-4.0.1.jar tiles-request-servlet-wildcard-1.0.7.jar ti
+ les-autotag-core-runtime-1.2.jar velocity-1.6.2.jar devon-boot-saga-aut
+ oconfigure-1.0-SNAPSHOT.jar spring-core-5.2.7.RELEASE.jar devon-idgener
+ ator-1.9.3.jar junit-jupiter-5.6.2.jar zstd-jni-1.4.4-7.jar feign-slf4j
+ -10.10.1.jar hamcrest-2.2.jar jboss-logging-3.4.1.Final.jar checker-qua
+ l-2.11.1.jar springfox-core-2.9.2.jar oro-2.0.8.jar spring-retry-1.2.5.
+ RELEASE.jar tomcat-embed-websocket-9.0.36.jar commons-collections4-4.2.
+ jar javassist-3.7.ga.jar devon-dataaccess-1.9.3.jar spring-boot-starter
+ -validation-2.3.1.RELEASE.jar springfox-schema-2.9.2.jar netty-handler-
+ 4.1.50.Final.jar tiles-el-3.0.8.jar xmlunit-core-2.7.0.jar devon-boot-m
+ anagement-saga-agent-1.0-SNAPSHOT.jar mockito-core-3.3.3.jar spring-boo
+ t-actuator-2.3.1.RELEASE.jar tiles-request-mustache-1.0.7.jar error_pro
+ ne_annotations-2.3.4.jar commons-lang3-3.10.jar devon-crypto-1.9.3.jar 
+ netty-transport-4.1.50.Final.jar devon-boot-saga-starter-1.0-SNAPSHOT.j
+ ar springfox-spi-2.9.2.jar netty-codec-4.1.50.Final.jar mapstruct-1.2.0
+ .Final.jar poi-ooxml-schemas-4.0.1.jar lena-embed-shade-1.3.1.2.jar spr
+ ing-cloud-openfeign-core-2.2.5.RELEASE.jar spring-integration-core-5.3.
+ 1.RELEASE.jar compiler-0.8.4.jar opentest4j-1.2.0.jar lena-embed-core-1
+ .3.1.2.jar devon-thymeleaf-1.9.3.jar tiles-extras-3.0.8.jar bcprov-jdk1
+ 5on-1.64.jar commons-logging-1.2.jar spring-boot-starter-aop-2.3.1.RELE
+ ASE.jar tiles-compat-3.0.8.jar devon-boot-starter-1.2.jar devon-paging-
+ 1.9.3.jar spring-plugin-core-1.2.0.RELEASE.jar netty-common-4.1.50.Fina
+ l.jar activation-1.1.1.jar log4j-to-slf4j-2.13.3.jar jstl-1.2.jar sprin
+ gfox-spring-web-2.9.2.jar byte-buddy-1.10.11.jar spring-cloud-commons-2
+ .2.5.RELEASE.jar spring-jcl-5.2.7.RELEASE.jar jackson-module-parameter-
+ names-2.11.0.jar spring-expression-5.2.7.RELEASE.jar
+

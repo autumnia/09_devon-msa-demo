@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>devonframe</groupId>
+        <artifactId>devon-framework</artifactId>
+        <version>1.9.2</version>
+    </parent>
+
+    <artifactId>devon-thymeleaf</artifactId>
+    <name>devon-thymeleaf</name>
+
+    <dependencies>
+
+        <!-- DevOnFrame -->
+        <dependency>
+            <groupId>devonframe</groupId>
+            <artifactId>devon-web</artifactId>
+            <version>${devonframe.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>devonframe</groupId>
+            <artifactId>devon-paging</artifactId>
+            <version>${devonframe.version}</version>
+        </dependency>
+
+        <!-- javax -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.11.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>3.0.11.RELEASE</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

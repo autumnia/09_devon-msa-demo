@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:Tag="http://Tag"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}"
+      layout:fragment="content">
+
+<meta charset="UTF-8">
+<title>Pay 조회</title>
+<script type="text/javaScript" language="javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    function fnRetrieveWallet() {
+        document.listForm.action = /*[[@{/walletView.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+
+    /*]]>*/
+</script>
+<div id="LblockBody">
+    <div id="LblockPageHeader">
+        <div id="LblockPageTitle">
+            <h1>Pay조회</h1>
+        </div>
+
+        <div id="LblockPageLocation">
+            <ul>
+                <li class="Lfirst"><span><a href="#">HOME</a></span></li>
+                <li><span><a href="#">My Pay</a></span></li>
+                <li class="Llast"><span>Pay조회</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="LblockBodyMain">
+        <form modelAttribute="user" th:name="listForm" th:method="post" th:onsubmit="|fnRetrieveWallet();return false;|">
+            <input type="hidden" name="from" />
+            <input type="hidden" name="mode" />
+            <input type="hidden" name="searchNum" />
+
+            <div id="LblockSearch">
+                <div>
+                    <div>
+                        <div>
+                            <table>
+                                <colgroup>
+                                    <col style="width: 30%;" />
+                                    <col style="width: 70%;" />
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th><label for="num" th:text="#{pay.number}"/></th>
+                                    <td>
+                                        <input class="Ltext" name="walletId" id="walletId" th:value="${wallet.id}" >
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <th><label for="user" th:text="#{pay.user.id}"/></th>
+                                    <td>
+                                        <input class="Ltext" name="id" id="id" th:value="${user.id}">
+                                        <input type="image" class="Limage" th:src="@{/images/btn_search.gif}" alt="search button" />
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="LblockPageSubtitle02" class="LblockPageSubtitle">
+                <h2>Pay 상세조회</h2>
+            </div>
+
+            <div id="LblockDetail02" class="LblockDetail">
+                <table summary="Pay 상세조회">
+                    <colgroup>
+                        <col style="width: 30%;" />
+                        <col style="width: 70%;" />
+                    </colgroup>
+                    <caption>Pay 상세조회</caption>
+                    <tbody>
+                    <tr>
+                        <th th:text="#{pay.balance}"/>
+                        <td>
+                            <input class="Ltext" name="balance" id="balance" th:value="${wallet.balance}" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <th th:text="#{pay.account.number}"/>
+                        <td>
+                            <input class="Ltext" name="accountNumber" id="accountNumber" th:value="${wallet.account.id}" >
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </form>
+        <br/><br/>
+        <!--<p th:text="${resultList}"></p>-->
+        <!--
+        <div id="LblockPageHeader">
+            <div id="LblockPageTitle">
+                <h1>Pay결제</h1>
+            </div>
+        </div>
+
+        <form modelAttribute="user" th:name="listForm" th:method="post" th:onsubmit="|fnRetrieveWallet();return false;|">
+            <input type="hidden" name="from" />
+            <input type="hidden" name="mode" />
+            <input type="hidden" name="searchNum" />
+
+            <div id="LblockDetail02" class="LblockDetail">
+                <table summary="Pay 결제">
+                    <caption>Pay 결제</caption>
+                    <tbody>
+                    <tr>
+                        <th th:text="#{pay.record.total}"/>
+                        <td>
+                            <input class="Ltext" name="price" id="price" th:value="${wallet.getId()}" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <th th:text="#{pay.record.point}"/>
+                        <td>
+                            <input class="Ltext" name="point" id="point" th:value="${wallet.getId}" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <th th:text="#{pay.record.number}"/>
+                        <td>
+                            <input class="Ltext" name="balance" id="balance" th:value="${wallet.getId}" >
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="LblockButton">
+                <a class="Lbtn" href="#" onclick="fnRetrieveWallet();"><span th:text='#{pay.record}'/></a>
+            </div>
+
+        </form>
+        -->
+    </div>
+</div>
+</html>

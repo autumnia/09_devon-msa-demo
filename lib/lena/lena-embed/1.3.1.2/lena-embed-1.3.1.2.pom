@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-dependencies</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath />
+	</parent>
+	<groupId>lena</groupId>
+	<artifactId>lena-embed</artifactId>
+	<packaging>pom</packaging>
+	<version>1.3.1.2</version>
+	<modules>
+		<module>lena-embed-shade</module>
+		<module>lena-embed-core</module>
+		<module>lena-embed-boot</module>
+		<module>spring-boot-starter-lena</module>
+		<module>lena-embed-manager</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<lena.version>1.3.1c</lena.version>
+		<embedded.tomcat.version>9.0.36</embedded.tomcat.version>
+		<spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+		<spring-framework.version>5.1.5.RELEASE</spring-framework.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+		<spring-boot-admin.version>2.3.1</spring-boot-admin.version>
+		<!-- obfuscate -->
+		<version.net.sf.proguard>6.1.1</version.net.sf.proguard>
+		<version.proguard.maven.plugin>2.1.0</version.proguard.maven.plugin>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-dependencies</artifactId>
+				<version>${spring-boot-admin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<!--<repository>
+			<id>devon-repository-private</id>
+			<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>devon-repository-private</id>
+			<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>-->
+		<repository>
+			<id>lena-repo-release</id>
+			<url>https://lenalab.jfrog.io/artifactory/lena-libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>lena-repo-snapshot</id>
+			<url>https://lenalab.jfrog.io/artifactory/lena-libs-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

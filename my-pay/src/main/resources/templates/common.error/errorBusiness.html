@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:Tag="http://Tag"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/default}"
+	  layout:fragment="content">
+<div id="LblockBody">
+<div id="LblockError">
+	<div>
+		<h1>오류가 발생하였습니다.</h1>
+		<p>
+		Business 오류가 발생하였습니다. (<th:block th:text="${exception.message}"/>)<br />
+		잠시 후 다시 시도해 주시기 바랍니다.<br />
+		문제가 해결되지 않을 경우 서비스데스크로 문의하시기 바랍니다.<br />
+		담당자 - 홍길동 대리 (02-6363-0000)
+		</p>
+	</div>
+</div>
+</div>

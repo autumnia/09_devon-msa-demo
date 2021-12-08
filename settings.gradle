@@ -1,0 +1,5 @@
+rootProject.name = 'devon-msa-demo'
+include 'my-pay'
+include 'my-point'
+include 'my-common'
+

@@ -1,0 +1,45 @@
+server:
+  port: 8091
+  servlet:
+    context-path: /my-point
+  shutdown: graceful
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: my-point
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/MY_POINT
+    username: my-point
+    password: my-point01
+    hikari:
+      auto-commit: false
+  thymeleaf:
+    mode: HTML
+
+devon:
+  mybatis:
+    common-dao:
+      use-original-exception: true
+      exception-wrapper: devonframe.dataaccess.exception.CommonDaoExceptionWrapper
+    sql-session:
+      data-source: dataSource
+      config-location: classpath:/sql/configuration.xml
+      mapper-locations: classpath:/sql/mariadb/*.xml
+  saga:
+    kafka:
+      bootstrap-servers: 127.0.0.1:9092
+      listener:
+        group-id: my-point
+        reply-topics: mypoint-default-reply
+      reply-timeout: 10s
+    outbox:
+      enabled: true
+      interval: 3000
+  management:
+    server: http://localhost:9000/management
+    api-key: kn+Ck4Eq0hSQm0p/xb/heUJ+X9yavySMZV+29R0+3r1T7WV2jCs04hKjlu0LIUJxneMzFF4faJlpMr7ABNh/LA==
+
+logging.level.devon.msa : debug

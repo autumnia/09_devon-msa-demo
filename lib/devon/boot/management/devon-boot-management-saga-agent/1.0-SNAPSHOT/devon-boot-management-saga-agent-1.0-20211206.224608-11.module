@@ -1,0 +1,194 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "devon.boot.management",
+    "module": "devon-boot-management-saga-agent",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "devon.boot.management",
+          "module": "devon-boot-management-saga-common",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "devon-boot-management-saga-agent-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-management-saga-agent-1.0-SNAPSHOT.jar",
+          "size": 59835,
+          "sha512": "059c10257820fc61496057c1a37421b47003cb23c8f2bcf46c4c018e347706388d2f32940570a416aec4efc6a6e5a2131816b44235e7973bb86018e1260a6704",
+          "sha256": "e3e524e90ae0b1efbae05701f1437f7537274d6ccda2b0244902a81d1d507c69",
+          "sha1": "eb7c6a25013e3626c514ecb589aabe72efba9141",
+          "md5": "6bda175a95d55e6cfbc1c8a7d365f674"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework",
+          "module": "spring-context",
+          "version": {
+            "requires": "5.2.7.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.6"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-webflux",
+          "version": {
+            "requires": "2.3.1.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-actuator",
+          "version": {
+            "requires": "2.3.1.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.3.1.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-configuration-processor",
+          "version": {
+            "requires": "2.3.1.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "devon.boot.management",
+          "module": "devon-boot-management-core",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "devon.boot.management",
+          "module": "devon-boot-management-saga-common",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-core",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "devon-boot-management-saga-agent-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-management-saga-agent-1.0-SNAPSHOT.jar",
+          "size": 59835,
+          "sha512": "059c10257820fc61496057c1a37421b47003cb23c8f2bcf46c4c018e347706388d2f32940570a416aec4efc6a6e5a2131816b44235e7973bb86018e1260a6704",
+          "sha256": "e3e524e90ae0b1efbae05701f1437f7537274d6ccda2b0244902a81d1d507c69",
+          "sha1": "eb7c6a25013e3626c514ecb589aabe72efba9141",
+          "md5": "6bda175a95d55e6cfbc1c8a7d365f674"
+        }
+      ]
+    }
+  ]
+}

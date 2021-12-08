@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="sidebarFragment">
+
+    <div id="LblockLeft">
+        <div id="LblockLeftTitle">
+            <div id="LblockLeftMenuStyle">
+                <a href="#" onclick="return false;"><img th:src="@{/images/slideMenu.gif}" alt="슬라이드메뉴" /></a>
+                <a href="#" onclick="return false;"><img th:src="@{/images/treeMenu.gif}" alt="트리메뉴" /></a>
+            </div>
+            <h1>
+                <th:block th:if="${session.MenuInfoInterceptor_menu1 =='0'}" th:text="|My Pay|" />
+                <th:block th:if="${session.MenuInfoInterceptor_menu1 =='1'}" th:text="|Function|" />
+            </h1>
+        </div>
+
+        <div id="LblockLeftMenu" class="LslideMenu">
+            <ul th:if="${session.MenuInfoInterceptor_menu1 =='0'}">
+                <li class="Lidx1 LhasChild" th:classappend="${session.MenuInfoInterceptor_menu2} =='0' ? Lopen"><span><a href="#">My Pay</a></span>
+                    <ul>
+                        <li class="Lfirst" th:classappend="${session.MenuInfoInterceptor_menu3} =='0' ? Lcurrent"><span><a th:href="@{/walletView.do?menu1=0&menu2=0&menu3=0}">Pay 조회</a></span></li>
+                        <li class="Lidx1" th:classappend="${session.MenuInfoInterceptor_menu3} =='1' ? Lcurrent"><span><a th:href="@{/paymentView.do?menu1=0&menu2=0&menu3=1}">Pay 결제</a></span></li>
+                        <li class="Lidx1" th:classappend="${session.MenuInfoInterceptor_menu3} =='2' ? Lcurrent"><span><a th:href="@{/historyView.do?menu1=0&menu2=0&menu3=2}">결제이력조회</a></span></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <ul th:if="${session.MenuInfoInterceptor_menu1 =='1'}">
+                <li class="LfirstLlast LhasChild" th:classappend="${session.MenuInfoInterceptor_menu2} =='0' ? Lopen"><span><a href="#">Foundation</a></span>
+                    <ul>
+                        <li class="Lfirst" th:classappend="${session.MenuInfoInterceptor_menu3} =='0' ? Lcurrent"><span><a th:href="@{/function/message/messageForm.do?menu1=1&menu2=0&menu3=0}">Message</a></span></li>
+                        <li class="Llast" th:classappend="${session.MenuInfoInterceptor_menu3} =='1' ? Lcurrent"><span><a th:href="@{/function/exception/exceptionForm.do?menu1=1&menu2=0&menu3=1}">Exception</a></span></li>
+                    </ul>
+                </li>
+                <li class="Lidx1 LhasChild" th:classappend="${session.MenuInfoInterceptor_menu2} =='1' ? Lopen"><span><a href="#">Presentation</a></span>
+                    <ul>
+                        <li class="Lfirst" th:classappend="${session.MenuInfoInterceptor_menu3} =='0' ? Lcurrent"><span><a th:href="@{/function/fileupload/fileUploadForm.do?menu1=1&menu2=1&menu3=0}">File Upload</a></span></li>
+                        <li class="Llast" th:classappend="${session.MenuInfoInterceptor_menu3} =='1' ? Lcurrent"><span><a th:href="@{/function/filedownload/retrieveFileDownloadList.do?menu1=1&menu2=1&menu3=1}">File Download</a></span></li>
+                    </ul>
+                </li>
+                <li class="Llast LhasChild" th:classappend="${session.MenuInfoInterceptor_menu2} =='2' ? Lopen"><span><a href="#">Support</a></span>
+                    <ul>
+                        <li class="Lfirst" th:classappend="${session.MenuInfoInterceptor_menu3} =='0' ? Lcurrent"><span><a th:href="@{/function/validator/bean/beanValidatorForm.do?menu1=1&menu2=2&menu3=0}">Bean Validator</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</th:block>
+
+</html>

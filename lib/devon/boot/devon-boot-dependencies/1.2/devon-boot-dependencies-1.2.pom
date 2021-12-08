@@ -1,0 +1,344 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.3.1.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+	<groupId>devon.boot</groupId>
+	<artifactId>devon-boot-dependencies</artifactId>
+	<version>1.2</version>
+	<packaging>pom</packaging>
+	<description>DevOn Boot Dependencies</description>
+
+	<properties>
+
+		<devon.boot.revision>1.2</devon.boot.revision>
+		<devonframe.revision>1.9.3</devonframe.revision>
+		<spring.boot.revision>2.3.1.RELEASE</spring.boot.revision>
+		<spring.cloud-version>Hoxton.SR8</spring.cloud-version>
+
+		<!-- mybatis -->
+		<mybatis.spring.version>2.0.0</mybatis.spring.version>
+		<rhino.version>1.7R2</rhino.version>
+		<r2dbc.version>0.8.3.RELEASE</r2dbc.version>
+		<xplatform.xapi.version>1.0</xplatform.xapi.version>
+		<nexacro.xapi.version>1.0</nexacro.xapi.version>
+
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<resource.delimiter>@</resource.delimiter>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+
+	<!-- Profiles -->
+	<profiles>
+		<profile>
+			<id>private</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.proguard.outjar>${project.build.finalName}_obfuscated.jar</build.proguard.outjar>
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>devon-repository</id>
+					<name>DevOn Framework Public Repository</name>
+					<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/releases</url>
+				</repository>
+				<snapshotRepository>
+					<id>devon-repository</id>
+					<name>DevOn Framework Public Repository(snapshot)</name>
+					<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/snapshots</url>
+					<uniqueVersion>true</uniqueVersion>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.3</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>public</id>
+			<activation>
+				<property>
+					<name>public</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<build.proguard.outjar>${project.build.finalName}.jar</build.proguard.outjar>
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>devon-public-repository</id>
+					<name>DevOn Framework Public Repository</name>
+					<url>http://www.dev-on.com/nexus/content/repositories/releases</url>
+				</repository>
+				<snapshotRepository>
+					<id>devon-public-repository</id>
+					<name>DevOn Framework Public Repository(snapshot)</name>
+					<url>http://www.dev-on.com/nexus/content/repositories/snapshots</url>
+					<uniqueVersion>true</uniqueVersion>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+	</profiles>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- devon -->
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-batch-core</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-context</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-web</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-core</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-crypto</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-dataaccess</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-dynamicloading-agent</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-dynamicloading-controller</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-egovframe</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-excel</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-fileupload</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-iam</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-idgenerator</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-log</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-mail</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-paging</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-rui</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-scheduler</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-servicecontrol</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-transaction</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-validator</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-xplatform</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devonframe</groupId>
+				<artifactId>devon-thymeleaf</artifactId>
+				<version>${devonframe.revision}</version>
+			</dependency>
+
+			<!-- DevOn Boot -->
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-dependencies</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-parent</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-autoconfigure</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-thymeleaf</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-rui</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-log4j2</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+			<!-- DevOn Boot Starter -->
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-starter</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-starter-log4j2</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-starter-thymeleaf</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-starter-rui</artifactId>
+				<version>${devon.boot.revision}</version>
+			</dependency>
+
+			<!-- DevOn Boot Tester -->
+			<dependency>
+				<groupId>devon.boot</groupId>
+				<artifactId>devon-boot-tester</artifactId>
+				<version>${devon.boot.revision}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- mybatis -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>rhino</groupId>
+				<artifactId>js</artifactId>
+				<version>${rhino.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.r2dbc</groupId>
+				<artifactId>r2dbc-proxy</artifactId>
+				<version>${r2dbc.version}</version>
+			</dependency>
+
+			<!-- rich ui -->
+			<!-- xplatform -->
+			<dependency>
+				<groupId>xplatform</groupId>
+				<artifactId>xplatform-xapi</artifactId>
+				<version>${xplatform.xapi.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- nexacro -->
+			<dependency>
+				<groupId>nexacro</groupId>
+				<artifactId>nexacro-xapi</artifactId>
+				<version>${nexacro.xapi.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+		</dependencies>
+	</dependencyManagement>
+
+</project>

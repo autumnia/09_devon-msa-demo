@@ -1,0 +1,188 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "devon.boot",
+    "module": "devon-boot-saga-starter",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-core",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-autoconfigure",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "devon-boot-saga-starter-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-saga-starter-1.0-SNAPSHOT.jar",
+          "size": 261,
+          "sha512": "aa6538fa21315701bf05699a5694e87792d396712acf12178c1da23653b022fc9dddb55cb4fc22fc01986f413992c466046370fe04c4f9d0d6874545832a0bff",
+          "sha256": "437bc0df7d7cdfd4be02dcb3a1dc223e0178707f3fb3720f10149704e1aa7835",
+          "sha1": "0ab9cc1c50c1bf66244e604b1fb0c638ce2c8bad",
+          "md5": "7c656549524655e6ec1feb5483cb1923"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework",
+          "module": "spring-context",
+          "version": {
+            "requires": "5.2.7.RELEASE"
+          }
+        },
+        {
+          "group": "org.apache.kafka",
+          "module": "kafka-streams",
+          "version": {
+            "requires": "2.5.0"
+          }
+        },
+        {
+          "group": "org.springframework.kafka",
+          "module": "spring-kafka",
+          "version": {
+            "requires": "2.5.2.RELEASE"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.11"
+          }
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-starter",
+          "version": {
+            "requires": "1.2"
+          }
+        },
+        {
+          "group": "org.springframework.cloud",
+          "module": "spring-cloud-stream",
+          "version": {
+            "requires": "3.0.8.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.cloud",
+          "module": "spring-cloud-starter-stream-kafka",
+          "version": {
+            "requires": "3.0.8.RELEASE"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-configuration-processor",
+          "version": {
+            "requires": "2.3.1.RELEASE"
+          }
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-core",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-autoconfigure",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "devon-boot-saga-starter-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-saga-starter-1.0-SNAPSHOT.jar",
+          "size": 261,
+          "sha512": "aa6538fa21315701bf05699a5694e87792d396712acf12178c1da23653b022fc9dddb55cb4fc22fc01986f413992c466046370fe04c4f9d0d6874545832a0bff",
+          "sha256": "437bc0df7d7cdfd4be02dcb3a1dc223e0178707f3fb3720f10149704e1aa7835",
+          "sha1": "0ab9cc1c50c1bf66244e604b1fb0c638ce2c8bad",
+          "md5": "7c656549524655e6ec1feb5483cb1923"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "devon-boot-saga-starter-1.0-SNAPSHOT-javadoc.jar",
+          "url": "devon-boot-saga-starter-1.0-SNAPSHOT-javadoc.jar",
+          "size": 261,
+          "sha512": "aa6538fa21315701bf05699a5694e87792d396712acf12178c1da23653b022fc9dddb55cb4fc22fc01986f413992c466046370fe04c4f9d0d6874545832a0bff",
+          "sha256": "437bc0df7d7cdfd4be02dcb3a1dc223e0178707f3fb3720f10149704e1aa7835",
+          "sha1": "0ab9cc1c50c1bf66244e604b1fb0c638ce2c8bad",
+          "md5": "7c656549524655e6ec1feb5483cb1923"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "devon-boot-saga-starter-1.0-SNAPSHOT-sources.jar",
+          "url": "devon-boot-saga-starter-1.0-SNAPSHOT-sources.jar",
+          "size": 261,
+          "sha512": "aa6538fa21315701bf05699a5694e87792d396712acf12178c1da23653b022fc9dddb55cb4fc22fc01986f413992c466046370fe04c4f9d0d6874545832a0bff",
+          "sha256": "437bc0df7d7cdfd4be02dcb3a1dc223e0178707f3fb3720f10149704e1aa7835",
+          "sha1": "0ab9cc1c50c1bf66244e604b1fb0c638ce2c8bad",
+          "md5": "7c656549524655e6ec1feb5483cb1923"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Record">
+    <select id="retrieveRecordListByUserId" resultType="record">
+	    <![CDATA[
+        select ID, AMOUNT, POINT_DIFF, WALLET_ID, USER_ID, STATUS, TIMESTAMP
+        from RECORD
+        where USER_ID = #{userId}
+        order by TIMESTAMP desc
+        ]]>
+	</select>
+
+    <insert id="createRecord">
+	   <![CDATA[
+        insert
+        into RECORD (ID, AMOUNT, POINT_DIFF, WALLET_ID, USER_ID, STATUS)
+        values (#{id}, #{amount}, #{pointDiff}, #{walletId}, #{userId}, #{status})
+        ]]>
+	</insert>
+
+	<update id="updateRecord">
+	   <![CDATA[
+		update RECORD
+	    set AMOUNT = #{amount},
+		    POINT_DIFF = #{pointDiff},
+		    WALLET_ID = #{walletId},
+		    USER_ID = #{userId},
+		    STATUS = #{status}
+		where ID = #{id}
+		]]>
+	</update>
+</mapper>

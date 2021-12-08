@@ -1,0 +1,83 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /my-pay
+  shutdown: graceful
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: my-pay
+  devtools:
+    livereload:
+      enabled: true
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/MY_PAY
+    username: my-pay
+    password: my-pay01
+    hikari:
+      auto-commit: false
+
+devon:
+  mybatis:
+    common-dao:
+      use-original-exception: true
+      exception-wrapper: devonframe.dataaccess.exception.CommonDaoExceptionWrapper
+    sql-session:
+      data-source: dataSource
+      config-location: classpath:/sql/configuration.xml
+      mapper-locations: classpath:/sql/mariadb/*.xml
+  saga:
+    kafka:
+      bootstrap-servers: 127.0.0.1:9092
+      listener:
+        group-id: my-pay
+        reply-topics: point-claimed-reply
+      reply-timeout: 600s
+    outbox:
+      enabled: true
+      interval: 10000
+  message:
+    default-type: file
+    use-parent: false
+    file:
+      basename: classpath:/message/message-common, classpath:/message/message-validator
+      cache-duration: 10
+      load-type: lazy
+  poc:
+    url:
+      my-point: localhost:8091/my-point
+  management:
+    server: http://localhost:9000/management
+    api-key: kn+Ck4Eq0hSQm0p/xb/heUJ+X9yavySMZV+29R0+3r1T7WV2jCs04hKjlu0LIUJxneMzFF4faJlpMr7ABNh/LA==
+
+  resolver:
+    exception:
+      #HandlerException 설정
+      composite-header:
+        exception-attribute: exceptionMessage
+        exception-code-attribute: exceptionMessageCode
+        error-logger-category: devonframe.exception.handler
+        header-mapping:
+          X-Requested-With: XMLHttpRequest
+          ORIGIN: "*"
+        error-view: ajaxView
+      simple-header:
+        order: 1
+        header-name: 'X-Requested-With'
+        header-values: XMLHttpRequest
+        error-view: ajaxErrorView
+      base-simple-mapping:
+        enabled: true
+        order: 2
+        warn-logger-category: errorLogger
+        exception-mappings:
+          BusinessException: common/error/errorBusiness
+          SystemException: common/error/errorSystem
+          MyBatisSystemException: common/error/error
+        default-error-view: common/error/error
+
+logging.level.devon.msa : debug

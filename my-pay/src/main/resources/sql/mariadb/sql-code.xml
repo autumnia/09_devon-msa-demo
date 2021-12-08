@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Code">
+
+	<select id="retrieveCode" resultType="devonboot.poc.pay.common.code.model.Code">
+		<![CDATA[
+			SELECT CODE_GROUP
+			       , CODE
+			       , NAME "value"
+			       , CODE_DESC
+			  FROM SAM_CODE
+			 WHERE CODE = #{code}
+			   AND CODE_GROUP = #{codeGroup}
+		]]>
+	</select>
+
+	<select id="retrieveCodeList" resultType="devonboot.poc.pay.common.code.model.Code">
+		<![CDATA[
+			SELECT CODE_GROUP
+			       , CODE
+			       , NAME "value"
+			       , CODE_DESC
+			  FROM SAM_CODE
+			 WHERE CODE_GROUP = #{codeGroup}
+			 ORDER BY CODE_GROUP, CODE
+		]]>
+	</select>
+
+	<select id="retrieveCodeGroupList" resultType="devonboot.poc.pay.common.code.model.Code">
+		<![CDATA[
+			SELECT DISTINCT CODE_GROUP
+			  FROM SAM_CODE
+			 ORDER BY CODE_GROUP
+		]]>
+	</select>
+
+	<insert id="insertCode">
+		<![CDATA[
+	        INSERT
+			  INTO SAM_CODE (CODE_GROUP, CODE, NAME, CODE_DESC)
+			VALUES (#{codeGroup}, #{code}, #{name}, #{codeDesc})
+		]]>
+	</insert>
+
+	<update id="updateCode">
+		<![CDATA[
+			UPDATE
+			       SAM_CODE
+			   SET NAME = #{name}
+			       , CODE_DESC = #{codeDesc}
+			 WHERE CODE = #{code}
+			   AND CODE_GROUP = #{codeGroup}
+		]]>
+	</update>
+
+	<delete id="deleteCode">
+		<![CDATA[
+			DELETE
+			  FROM SAM_CODE
+			 WHERE CODE = #{code}
+			   AND CODE_GROUP = #{codeGroup}
+		]]>
+	</delete>
+
+
+</mapper>

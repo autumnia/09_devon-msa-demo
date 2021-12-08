@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>devonframe</groupId>
+	<artifactId>devon-framework</artifactId>
+	<version>1.9.3</version>
+	<packaging>pom</packaging>
+	<name>devon-framework</name>
+	<description>devon framework</description>
+
+	<!-- scm info -->
+	<scm>
+		<url>scm:git:https://wire.lgcns.com/bitbucket/scm/devonframe/standard.git</url>
+		<connection>scm:git:https://wire.lgcns.com/bitbucket/scm/devonframe/standard.git</connection>
+		<developerConnection>scm:git:https://wire.lgcns.com/bitbucket/scm/devonframe/standard.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<modules>
+		<module>devon-batch-core</module>
+		<module>devon-core</module>
+		<module>devon-context</module>
+		<module>devon-crypto</module>
+		<module>devon-dataaccess</module>
+		<module>devon-dynamicloading-controller</module>
+		<module>devon-dynamicloading-agent</module>
+		<module>devon-egovframe</module>
+		<module>devon-excel</module>
+		<module>devon-fileupload</module>
+		<module>devon-iam</module>
+		<module>devon-idgenerator</module>
+		<module>devon-log</module>
+		<module>devon-mail</module>
+		<module>devon-paging</module>
+		<module>devon-rui</module>
+		<module>devon-scheduler</module>
+		<module>devon-servicecontrol</module>
+		<module>devon-transaction</module>
+		<module>devon-validator</module>
+		<module>devon-web</module>
+		<module>devon-xplatform</module>
+		<module>devon-thymeleaf</module>
+	</modules>
+
+	<!-- Properties -->
+	<properties>
+		<java.version>1.8</java.version>
+		<encoding>UTF-8</encoding>
+		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+
+		<!-- skip settings. use 'mvn -Dmaven.test.skip=true install' to skip testcase -->
+		<maven.test.skip>false</maven.test.skip>
+		<maven.javadoc.skip>false</maven.javadoc.skip>
+		<maven.proguard.skip>false</maven.proguard.skip>
+		<maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        
+		<!-- Dependency library version -->
+
+		<!-- devonframe -->
+		<devonframe.version>${project.version}</devonframe.version>
+
+		<!-- spring -->
+		<org.springframework.version>5.2.7.RELEASE</org.springframework.version>
+		<org.springframework.security.version>5.1.5.RELEASE</org.springframework.security.version>
+		<!-- <org.springframework.security.version>4.2.3.RELEASE</org.springframework.security.version> -->
+		<org.springframework.batch.version>4.1.2.RELEASE</org.springframework.batch.version>
+		<org.springframework.springloaded.version>1.2.8.RELEASE</org.springframework.springloaded.version>
+
+		<!-- logging -->
+		<slf4j.version>1.7.26</slf4j.version>
+		<log4j2.version>2.11.2</log4j2.version>
+
+		<!-- aspectjweaver -->
+		<aspectjweaver.version>1.9.2</aspectjweaver.version>
+
+		<!-- jackson -->
+		<jackson.version>2.9.8</jackson.version>
+		<!-- json -->
+		<gson.version>2.8.5</gson.version>
+		<json.version>20180813</json.version>
+
+		<!-- jetty -->
+		<jetty.server.version>7.6.5.v20120716</jetty.server.version>
+
+		<!-- junit -->
+		<junit.version>4.12</junit.version>
+		<junit5.version>5.3.2</junit5.version>
+
+		<!-- org.mockito -->
+		<mockito.version>2.23.4</mockito.version>
+
+		<!-- refresh에서 사용하며, asm 기능 불필요하여 nodep로 사용함. -->
+		<cglib.nodep.version>3.2.10</cglib.nodep.version>
+
+		<!-- servlet -->
+		<servlet.api.version>4.0.1</servlet.api.version>
+		<jsp.api.version>2.3.2-b02</jsp.api.version>
+		<jaxb.api.version>2.3.1</jaxb.api.version>
+
+		<hikaricp.version>3.4.5</hikaricp.version>
+		<commons.configuration2.version>2.4</commons.configuration2.version>
+		<commons.fileupload.version>1.3.3</commons.fileupload.version>
+		<commons.io.version>2.5</commons.io.version>
+
+		<commons.codec.version>1.11</commons.codec.version>
+		<commons.logging.version>1.2</commons.logging.version>
+
+		<commons.dbcp.version>1.4</commons.dbcp.version>
+		<commons.dbcp2.version>2.5.0</commons.dbcp2.version>
+		<commons.compress.version>1.18</commons.compress.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
+		<commons.beanutils.version>1.9.3</commons.beanutils.version>
+		<commons.pool2.version>2.6.0</commons.pool2.version>
+
+		<!-- mail -->
+		<javax.mail.version>1.6.2</javax.mail.version>
+
+		<!-- quartz -->
+		<quartz.version>2.2.3</quartz.version>
+
+		<!-- cache -->
+		<ehcache.version>2.10.4</ehcache.version>
+
+		<!-- mybatis -->
+		<mybatis.version>3.5.0</mybatis.version>
+		<mybatis.spring.version>2.0.0</mybatis.spring.version>
+
+		<!-- DBMS -->
+		<hsqldb.version>2.4.1</hsqldb.version>
+		<oracle.version>10.2.0.4.0</oracle.version>
+		<derby.version>10.14.2.0</derby.version>
+		<mariadb.version>2.4.0</mariadb.version>
+
+		<!-- poi -->
+		<org.apache.poi.version>4.0.1</org.apache.poi.version>
+		<jstl.version>1.2</jstl.version>
+
+		<!-- validator -->
+		<hibernate.validator.version>6.0.14.Final</hibernate.validator.version>
+		<!-- hibernate 사용 시 JSR 341 reference implemnetation 추가해야함. -->
+		<glassfish.version>3.0.1-b09</glassfish.version>
+
+		<!-- validation -->
+		<commons.validator.version>1.6</commons.validator.version>
+		<spring.modules.validation.version>0.8</spring.modules.validation.version>
+		<rhino.js.version>1.6R2</rhino.js.version>
+
+		<!-- org.yaml.snake -->
+		<org.yaml.version>1.24</org.yaml.version>
+
+		<!-- eGovFrame -->
+		<egovframe.version>3.7.0</egovframe.version>
+
+		<activation.version>1.1.1</activation.version>
+		<stax.api.version>1.0</stax.api.version>
+		<stax.version>1.2.0</stax.version>
+		<xplatform.xapi.version>1.0</xplatform.xapi.version>
+		<nexacro.xapi.version>1.0</nexacro.xapi.version>
+
+		<!-- jsr 250 api -->
+		<jsr250.api.version>1.0</jsr250.api.version>
+
+		<maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
+		<buildtime>${maven.build.timestamp}</buildtime>
+
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+		<!-- scm url -->
+		<project.scm.developerConnection>scm.url</project.scm.developerConnection>
+
+		<!-- Jacoco and Sonar config properties -->
+		<jacoco.version>0.8.4</jacoco.version>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar-jacoco-listeners.version>1.4</sonar-jacoco-listeners.version>
+		<sonar.language>java</sonar.language>
+		<sonar.junit.reportsPath>target/surefire-reports</sonar.junit.reportsPath>
+		<!-- <sonar.skippedModules>mySikppedModule1,mySkippedModule2</sonar.skippedModules> -->
+
+		<jacoco.outputDir>${basedir}/target</jacoco.outputDir>
+		<jacoco.out.ut.file>jacoco-ut.exec</jacoco.out.ut.file>
+		<jacoco.out.it.file>jacoco-it.exec</jacoco.out.it.file>
+
+		<sonar.jacoco.reportPath>${jacoco.outputDir}/${jacoco.out.ut.file}</sonar.jacoco.reportPath>
+		<sonar.jacoco.itReportPath>${jacoco.outputDir}/${jacoco.out.it.file}</sonar.jacoco.itReportPath>
+
+		<!-- obfuscate -->
+		<version.net.sf.proguard>6.1.1</version.net.sf.proguard>
+		<version.proguard.maven.plugin>2.1.0</version.proguard.maven.plugin>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>private</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.proguard.outjar>${project.build.finalName}_obfuscated.jar</build.proguard.outjar>
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>devon-repository</id>
+					<name>DevOn Framework Public Repository</name>
+					<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/releases</url>
+				</repository>
+				<snapshotRepository>
+					<id>devon-repository</id>
+					<name>DevOn Framework Public Repository(snapshot)</name>
+					<url>http://www.dev-on.com/devon_framework/nexus/content/repositories/snapshots</url>
+					<uniqueVersion>true</uniqueVersion>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.3</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>public</id>
+			<activation>
+				<property>
+					<name>public</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<build.proguard.outjar>${project.build.finalName}.jar</build.proguard.outjar>
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>devon-public-repository</id>
+					<name>DevOn Framework Public Repository</name>
+					<url>http://www.dev-on.com/nexus/content/repositories/releases</url>
+				</repository>
+				<snapshotRepository>
+					<id>devon-public-repository</id>
+					<name>DevOn Framework Public Repository(snapshot)</name>
+					<url>http://www.dev-on.com/nexus/content/repositories/snapshots</url>
+					<uniqueVersion>true</uniqueVersion>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>devon-repository</id>
+			<name>DevOn Framework Repository</name>
+			<layout>default</layout>
+			<url>http://www.dev-on.com/devon_framework/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>devon-public-repository</id>
+			<name>DevOn Framework Public Repository</name>
+			<layout>default</layout>
+			<url>http://www.dev-on.com/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>devon-repository</id>
+			<name>DevOn Framework Repository</name>
+			<layout>default</layout>
+			<url>http://www.dev-on.com/devon_framework/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
+			<id>devon-public-repository</id>
+			<name>DevOn Framework Public Repository</name>
+			<layout>default</layout>
+			<url>http://www.dev-on.com/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- Sample DB -->
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>${hsqldb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.derby</groupId>
+				<artifactId>derby</artifactId>
+				<version>${derby.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mariadb.jdbc</groupId>
+				<artifactId>mariadb-java-client</artifactId>
+				<version>${mariadb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet.api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>javax.servlet.jsp-api</artifactId>
+				<version>${jsp.api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>${jsr250.api.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.sonar-plugins.java</groupId>
+			<artifactId>sonar-jacoco-listeners</artifactId>
+			<version>${sonar-jacoco-listeners.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.sonar.plugins</groupId>
+			<artifactId>sonar-surefire-plugin</artifactId>
+			<version>3.3.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<scope>test</scope>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<scope>test</scope>
+			<version>1.9.2</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<directory>${basedir}/target</directory>
+		<finalName>${project.name}-${project.version}</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<!-- compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<target>${maven.compiler.target}</target>
+					<compilerVersion>${maven.compiler.source}</compilerVersion>
+					<encoding>${encoding}</encoding>
+					<maxmem>512m</maxmem>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<skipTests>${maven.test.skip}</skipTests>
+					<encoding>${encoding}</encoding>
+					<reportFormat>xml</reportFormat>
+					<argLine>-Dfile.encoding=${encoding} ${jacoco.agent.ut.arg}
+						-Duser.language=ko -Xms512m -Xmx1024m</argLine>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>org.sonar.java.jacoco.JUnitListener</value>
+						</property>
+					</properties>
+					<reportsDirectory>${jacoco.outputDir}/surefire-reports</reportsDirectory>
+				</configuration>
+			</plugin>
+
+			<!-- failsafe -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<encoding>${encoding}</encoding>
+					<!-- <argLine>-Duser.language=ko</argLine> -->
+					<argLine>-Dfile.encoding=${encoding} -Xms512m -Xmx1024m
+						-Duser.language=ko ${jacoco.agent.it.arg}</argLine>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>org.sonar.java.jacoco.JUnitListener</value>
+						</property>
+					</properties>
+					<reportsDirectory>${jacoco.outputDir}/surefire-reports</reportsDirectory>
+				</configuration>
+				<executions>
+					<!-- <execution> <goals> <goal>integration-test</goal> <goal>verify</goal> 
+						</goals> </execution> -->
+					<execution>
+						<id>integration-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Jacoco -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<!-- <execution> <id>default-prepare-agent</id> <goals> <goal>prepare-agent</goal> 
+						</goals> </execution> <execution> <id>agent</id> <goals> <goal>prepare-agent</goal> 
+						</goals> </execution> -->
+					<execution>
+						<id>prepare-ut-agent</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<destFile>${sonar.jacoco.reportPath}</destFile>
+							<propertyName>jacoco.agent.ut.arg</propertyName>
+							<append>true</append>
+						</configuration>
+					</execution>
+					<execution>
+						<id>prepare-it-agent</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<!-- <goal>prepare-agent-integration</goal> -->
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<destFile>${sonar.jacoco.itReportPath}</destFile>
+							<propertyName>jacoco.agent.it.arg</propertyName>
+							<append>true</append>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<dataFile>${sonar.jacoco.reportPath}</dataFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>integration-report</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>report-integration</goal>
+						</goals>
+						<configuration>
+							<dataFile>${sonar.jacoco.itReportPath}</dataFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Java Doc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>attach-aggregate</id>
+						<phase>package</phase>
+						<goals>
+							<goal>aggregate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<javadocVersion>${java.version}.0</javadocVersion>
+					<aggregate>true</aggregate>
+					<additionalparam>-Xdoclint:none</additionalparam>
+					<additionalDependencies>
+						<additionalDependency>
+							<groupId>javax.annotation</groupId>
+							<artifactId>jsr250-api</artifactId>
+							<version>1.0</version>
+						</additionalDependency>
+					</additionalDependencies>
+					<doclint>none</doclint>
+					<docencoding>${encoding}</docencoding>
+					<charset>${encoding}</charset>
+					<encoding>${encoding}</encoding>
+
+					<doctitle><![CDATA[DevOnFrame<sup>TM</sup> Core API Specification]]></doctitle>
+					<header><![CDATA[DevOnFrame<sup>TM</sup> Core]]></header>
+					<bottom><![CDATA[<span style="font-size:smaller;">Copyright &copy; LG CNS, Inc. All rights reserved.</span>]]></bottom>
+					<groups>
+						<group>
+							<title>devonframe.core</title>
+							<packages>devonframe.configuration*:devonframe.exception*:devonframe.message*:devonframe.refresh*:devonframe.util*</packages>
+						</group>
+						<group>
+							<title>devonframe.batch</title>
+							<packages>devonframe.batch*</packages>
+						</group>
+						<group>
+							<title>devonframe.crypto</title>
+							<packages>devonframe.security.crypto*</packages>
+						</group>
+						<group>
+							<title>devonframe.dataaccess</title>
+							<packages>devonframe.dataaccess*:devonframe.datasource*</packages>
+						</group>
+						<group>
+							<title>devonframe.egovframe</title>
+							<packages>devonframe.egovframe*</packages>
+						</group>
+						<group>
+							<title>devonframe.excel</title>
+							<packages>devonframe.excel*</packages>
+						</group>
+						<group>
+							<title>devonframe.fileupload</title>
+							<packages>devonframe.fileupload*</packages>
+						</group>
+						<group>
+							<title>devonframe.iam</title>
+							<packages>devonframe.iam*</packages>
+						</group>
+						<group>
+							<title>devonframe.idgenerator</title>
+							<packages>devonframe.idgen*</packages>
+						</group>
+						<group>
+							<title>devonframe.log</title>
+							<packages>devonframe.log.log4j*</packages>
+						</group>
+						<group>
+							<title>devonframe.mail</title>
+							<packages>devonframe.mail*</packages>
+						</group>
+						<group>
+							<title>devonframe.paging</title>
+							<packages>devonframe.paging*</packages>
+						</group>
+						<group>
+							<title>devonframe.scrollpaging</title>
+							<packages>devonframe.scrollpaging*</packages>
+						</group>
+						<group>
+							<title>devonframe.scheduler</title>
+							<packages>devonframe.scheduler*</packages>
+						</group>
+						<group>
+							<title>devonframe.validator</title>
+							<packages>devonframe.validator*</packages>
+						</group>
+						<group>
+							<title>devonframe.web</title>
+							<packages>devonframe.web.servlet*:devonframe.filedownload*:devonframe.savedtoken*</packages>
+						</group>
+						<group>
+							<title>devonframe.xplatform</title>
+							<packages>devonframe.web.ria.support.xplatform*</packages>
+						</group>
+						<group>
+							<title>devonframe.rui</title>
+							<packages>devonframe.web.ria.support.rui*</packages>
+						</group>
+
+						<group>
+							<title>devonframe.context</title>
+							<packages>devonframe.context*</packages>
+						</group>
+						<group>
+							<title>devonframe.dynamicloading.agent</title>
+							<packages>devonframe.refresh.classloading.agent*:devonframe.refresh.classloading.model*:devonframe.refresh.classloading.DynamicLoadingGlobalConfiguration:devonframe.refresh.classloading.DynamicLoadingResultManager</packages>
+						</group>
+						<group>
+							<title>devonframe.dynamicloading.controller</title>
+							<packages>devonframe.refresh.classloading.controller*:devonframe.refresh.classloading.servlet*:devonframe.refresh.classloading.DynamicLoadingManager:devonframe.refresh.classloading.DynamicLoadingManagerImpl:devonframe.refresh.classloading.DynamicLoadingReqeustState:devonframe.refresh.classloading.DynamicLoadingState:devonframe.refresh.classloading.DynamicLoadingUtil</packages>
+						</group>
+						<group>
+							<title>devonframe.servicecontrol</title>
+							<packages>devonframe.servicecontrol*</packages>
+						</group>
+						<group>
+							<title>devonframe.thymeleaf</title>
+							<packages>devonframe.thymeleaf*</packages>
+						</group>
+					</groups>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.wvengen</groupId>
+				<artifactId>proguard-maven-plugin</artifactId>
+				<version>${version.proguard.maven.plugin}</version>
+				<executions>
+					<execution>
+						<id>obfuscation-packaging</id>
+						<phase>package</phase>
+						<goals>
+							<goal>proguard</goal>
+						</goals>
+						<configuration>
+							<proguardVersion>${version.net.sf.proguard}</proguardVersion>
+							<obfuscate>true</obfuscate>
+							<skip>${maven.proguard.skip}</skip>
+							<injar>${project.build.finalName}.jar(!META-INF/versions/**)</injar>
+							<injarNotExistsSkip>true</injarNotExistsSkip>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<outjar>${build.proguard.outjar}</outjar>
+							<proguardInclude>${project.artifactId}.pro</proguardInclude>
+							<addMavenDescriptor>true</addMavenDescriptor>
+							<libs>
+								<lib>${java.home}/lib/rt.jar</lib>
+								<lib>${java.home}/lib/jce.jar</lib>
+							</libs>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.proguard</groupId>
+						<artifactId>proguard-base</artifactId>
+						<version>${version.net.sf.proguard}</version>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+				<configuration>
+					<skip>${maven.site.skip}</skip>
+					<skipDeploy>true</skipDeploy>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-site</id>
+						<phase>package</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin><!-- Ant task run (Javadoc zipping) -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>archive-javadocandsite</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<exportAntProperties>true</exportAntProperties>
+							<target>
+								<!-- <echo message="build directory : ${project.build.directory}/site/apidocs" 
+									/> <echo message="basedir : ${basedir}/site/apidocs" /> <echoproperties prefix="org" 
+									/> -->
+								<taskdef
+									resource="net/sf/antcontrib/antcontrib.properties"
+									classpathref="maven.plugin.classpath" />
+								<if>
+									<available
+										file="${project.build.directory}/site/apidocs" />
+									<then>
+										<echo
+											message="found aggregated javadoc : ${project.build.directory}/site/apidocs" />
+										<zip
+											zipfile="${basedir}/devonframe-${devonframe.version}-api.zip"
+											basedir="${project.build.directory}/site/apidocs" />
+										<echo message="Success #1" />
+									</then>
+								</if>
+								<if>
+									<equals arg1="${project.artifactId}"
+										arg2="devon-framework" />
+									<then>
+										<echo
+											message="archive aggregated site : ${project.build.directory}/site >> ${basedir}/devonframe-${devonframe.version}-site.zip" />
+										<zip
+											destfile="${basedir}/devonframe-${devonframe.version}-site.zip"
+											basedir="${project.build.directory}/site" />
+										<echo message="Success #2" />
+									</then>
+									<else>
+										<echo
+											message="update archive aggregated site : ${project.build.directory}/site >> ${basedir}/../devonframe-${devonframe.version}-site.zip" />
+										<zip
+											destfile="${basedir}/../devonframe-${devonframe.version}-site.zip"
+											update="true">
+											<zipfileset dir="${project.build.directory}/site"
+												prefix="${project.artifactId}" />
+										</zip>
+										<echo message="Success #3" />
+									</else>
+								</if>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+							<exclusion>
+								<groupId>ant</groupId>
+								<artifactId>ant</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-nodeps</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.9</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.shared</groupId>
+						<artifactId>maven-shared-jar</artifactId>
+						<version>1.2</version>
+						<exclusions>
+							<exclusion>
+								<groupId>com.google.code.findbugs</groupId>
+								<artifactId>bcel-findbugs</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.bcel</groupId>
+						<artifactId>bcel</artifactId>
+						<version>6.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+				<!-- <reportSets> <reportSet> <reports> <report>index</report> <report>licenses</report> 
+					<report>dependency-info</report> </reports> </reportSet> </reportSets> -->
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

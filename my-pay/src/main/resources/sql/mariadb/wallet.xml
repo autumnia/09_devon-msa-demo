@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Wallet">
+    <select id="retrieveWallet" resultType="wallet">
+	    <![CDATA[
+        SELECT ID, USER_ID, ACCOUNT_ID, BALANCE
+        FROM WALLET
+        WHERE ID = #{id}
+        ]]>
+	</select>
+
+	<select id="retrieveWalletByUserId" resultType="wallet">
+	    <![CDATA[
+		SELECT *
+		FROM WALLET
+		WHERE USER_ID = #{userId}
+		]]>
+	</select>
+
+    <insert id="createWallet">
+	   <![CDATA[
+        insert
+        into WALLET (ACCOUNT_ID, MEMBER_ID, BALANCE, TYPE_ID, PRODUCT_ID)
+        values (#{accountId}, #{memberId}, #{balance}, #{typeId}, #{productId})
+        ]]>
+	</insert>
+
+    <update id="updateWallet">
+	   <![CDATA[
+        update WALLET
+        set ACCOUNT_ID = #{accountId}, BALANCE = #{balance}
+        where ID = #{id}
+        ]]>
+	</update>
+</mapper>

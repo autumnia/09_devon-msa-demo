@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:Tag="http://Tag"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}"
+      layout:fragment="content">
+
+<meta charset="UTF-8">
+<title>결제이력조회</title>
+<script type="text/javaScript" language="javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    function fnRetrieveRecordList() {
+        document.listForm.action = /*[[@{/historyView.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function fnRetrieveEmployee(num) {
+        document.listForm.from.value = "empThList";
+        document.listForm.mode.value = "update";
+        document.listForm.searchNum.value = document.listForm.num.value;
+        document.listForm.num.value = num;
+        document.listForm.action = /*[[@{/employee/retrieveEmployeeTh.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function fnRetrieveEmployeeForm() {
+        document.listForm.from.value = "empThList";
+        document.listForm.mode.value = "insert";
+        document.listForm.action = /*[[@{/employee/retrieveEmployeeThForm.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function checkMessage() {
+        var message = /*[[${param.msg}]]*/ 'default';
+        if(message == "success") {
+            alert(/*[[#{sample.common.message.processSuccess}]]*/ 'default');
+        }
+    }
+    function fnSelectAllOrNot() {
+        var doCheck = document.listForm.checkAll.checked;
+
+        if(document.listForm.selectedCode.length > 1) {
+            for(var inx=0; inx < document.listForm.selectedCode.length; inx++) {
+                document.listForm.selectedCode[inx].checked = doCheck;
+            }
+        } else {
+            document.listForm.selectedCode.checked = doCheck;
+        }
+    }
+    /*]]>*/
+</script>
+<div id="LblockBody">
+    <div id="LblockPageHeader">
+        <div id="LblockPageTitle">
+            <h1>결제이력조회</h1>
+        </div>
+
+        <div id="LblockPageLocation">
+            <ul>
+                <li class="Lfirst"><span><a href="#">HOME</a></span></li>
+                <li><span><a href="#">My Pay</a></span></li>
+                <li class="Llast"><span>결제이력조회</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="LblockBodyMain">
+        <form modelAttribute="user" th:name="listForm" th:method="post" th:onsubmit="|fnRetrieveRecordList();return false;|">
+            <input type="hidden" name="from" />
+            <input type="hidden" name="mode" />
+            <input type="hidden" name="searchNum" />
+
+            <div id="LblockPageSubtitle02" class="LblockPageSubtitle">
+                <h2>결제 이력조회</h2>
+            </div>
+
+            <div id="LblockListTable01" class="LblockListTable">
+                <div class="Lwrapper">
+                    <table th:summary="#{sample.employee.empList}">
+                        <!--<caption th:text="#{sample.employee.empList}"></caption>-->
+                        <thead>
+                        <tr>
+                            <th th:text="#{pay.record.time}"/>
+                            <th th:text="#{pay.record.total}"/>
+                            <th th:text="#{pay.record.price}"/>
+                            <th th:text="#{pay.record.point}"/>
+                            <th th:text="#{pay.approval.status}"/>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="Lfirst" th:each="result : ${recordList}">
+                                <td th:text="${result.timestamp}"></td>
+                                <td th:text="${result.amount}"></td>
+                                <td th:text="${result.amount}+${result.pointDiff}"></td>
+                                <td th:text="${result.pointDiff}"></td>
+                                <td th:text="${result.status.name()}"></td>
+                            </tr>
+                        </tbody>
+
+                        <!--                        <tbody>-->
+                        <!--                        <tr class="Lfirst" th:each="result : ${resultList}">-->
+                        <!--                            <td class="Lfirst"><input type="checkbox" class="Lcheckbox" name="selectedCode"/></td>-->
+                        <!--                            <td class="Lfirst"><a th:onclick="|javascript:fnRetrieveEmployee(${result.num})|" th:text="${result.num}" /></td>-->
+                        <!--                            <td th:text="${result.name}"></td>-->
+                        <!--                            <td th:if="${!result.birthdate.equals('')}" Tag:mask="|####-##-##,${result.birthdate}|"></td>-->
+                        <!--                            <td th:text="${result.gender}"></td>-->
+                        <!--                            <td Tag:phone="|${result.telephone}|"></td>-->
+                        <!--                            <td th:text="${result.address}"></td>-->
+                        <!--                            <td class="Llast" th:if="${!result.postal.equals('')}" Tag:mask="|###-###,${result.postal}|"></td>-->
+                        <!--                        </tr>-->
+                        <!--                        </tbody>-->
+                    </table>
+                </div>
+            </div>
+
+
+        </form>
+        <!--<p th:text="${resultList}"></p>-->
+
+    </div>
+</div>
+</html>

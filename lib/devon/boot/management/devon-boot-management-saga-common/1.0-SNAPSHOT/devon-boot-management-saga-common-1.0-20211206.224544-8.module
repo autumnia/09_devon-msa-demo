@@ -1,0 +1,101 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "devon.boot.management",
+    "module": "devon-boot-management-saga-common",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "devon-boot-management-saga-common-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-management-saga-common-1.0-SNAPSHOT.jar",
+          "size": 67425,
+          "sha512": "6be7469a45f234f4c59ca845b6e66850d413815b506efb19850941edaeebebc77861bc093f84cbc484aaae500b74d86a949fa0d4b7319b46a15621d6061958fd",
+          "sha256": "fe6a7eefe23efd70ac229b60685c23f8287a176d1283df168977793a228aa1d8",
+          "sha1": "1a3426909d6b63ccd5529c1a38e2aa9b2e7f5aa0",
+          "md5": "69d120f30b9ab769426689ea6037dcbf"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-saga-core",
+          "version": {
+            "requires": "1.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.6"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        },
+        {
+          "group": "devon.boot",
+          "module": "devon-boot-starter",
+          "version": {
+            "requires": "1.2"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "devon-boot-management-saga-common-1.0-SNAPSHOT.jar",
+          "url": "devon-boot-management-saga-common-1.0-SNAPSHOT.jar",
+          "size": 67425,
+          "sha512": "6be7469a45f234f4c59ca845b6e66850d413815b506efb19850941edaeebebc77861bc093f84cbc484aaae500b74d86a949fa0d4b7319b46a15621d6061958fd",
+          "sha256": "fe6a7eefe23efd70ac229b60685c23f8287a176d1283df168977793a228aa1d8",
+          "sha1": "1a3426909d6b63ccd5529c1a38e2aa9b2e7f5aa0",
+          "md5": "69d120f30b9ab769426689ea6037dcbf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>devon.boot</groupId>
+		<artifactId>devon-boot-dependencies</artifactId>
+		<version>1.1</version>
+		<relativePath />
+	</parent>
+	<artifactId>devon-boot-parent</artifactId>
+	<packaging>pom</packaging>
+	<description>DevOn Boot Parent</description>
+
+	<properties>
+		<devon.boot.revision>1.1</devon.boot.revision>
+		<devonframe.revision>1.9.2</devonframe.revision>
+		<spring.boot.revision>2.3.1.RELEASE</spring.boot.revision>
+	</properties>
+
+
+</project>

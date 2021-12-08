@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>devon.boot</groupId>
+		<artifactId>devon-boot-project</artifactId>
+		<version>1.1</version>
+	</parent>
+	<artifactId>devon-boot-autoconfigure</artifactId>
+	<description>DevOn Boot Autoconfigure</description>
+
+	<dependencies>
+		<!-- DevOn Boot Dependencies -->
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot</artifactId>
+		</dependency>
+
+		<!-- DevOn Frame Dependencies -->
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-crypto</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-log</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-slf4j-impl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-dataaccess</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-paging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-fileupload</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-transaction</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.json.bind</groupId>
+			<artifactId>javax.json.bind-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot-tester</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- trace log test -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<scope>test</scope>
+			</dependency>
+
+	</dependencies>
+</project>

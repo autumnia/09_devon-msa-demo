@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html	lang="ko"
+         xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="topFragment">
+    <div id="LblockHeader">
+        <div id="LblockHeaderIn">
+            <div id="LblockTopLogo">
+                <a th:href="@{/main.do?menu1=0&menu2=0&menu3=0}"><img th:src="@{/images/topLogo.jpg}" alt="사이트 상단 로고" /></a>
+            </div>
+        </div>
+
+        <div id="LblockWelcome">
+            <!--        <p th:text="|${session.loginUser.usrNm}님 환영합니다.|" }></p>-->
+            <p th:text="|Guest님 환영합니다.|" }></p>
+            <a th:href="@{/common/login/logout.do}">로그아웃</a>
+        </div>
+
+        <div id="LblockSupportMenu">
+            <ul>
+                <li class="Lfirst"><a th:href="@{/main.do?menu1=0&menu2=0&menu3=0}">HOME</a></li>
+                <li class="Lidx1"><a href="#">CONTACT</a></li>
+                <li class="Llast"><a href="#">ENGLISH</a></li>
+            </ul>
+        </div>
+
+        <div id="LblockTotalSearch">
+            <form method="get" action="">
+                <label for="totalSearch">통합검색:</label> <input id="totalSearch" type="text" class="Ltext" size="15" /><input type="image" class="Limage" th:src="@{/images/totalSearch_btn.gif}" alt="검색" />
+            </form>
+        </div>
+
+        <div id="LblockTopMenu">
+            <ul class="Lclear">
+                <li class="Lfirst" th:classappend="${session.MenuInfoInterceptor_menu1} =='0' ? Lcurrent"><span><a href="#" onclick="_topMenu.setCurrent(0);">My Pay</a></span>
+                    <ul>
+                        <li class="Lidx1"  th:classappend="${session.MenuInfoInterceptor_menu2} =='0' ? Lcurrent"><span><a th:href="@{/retreivePay.do?menu1=0&menu2=0&menu3=0}" onclick="_topMenu.setCurrent(0,1);">Pay 상세조회</a></span></li>
+                    </ul>
+                </li>
+<!--                <li class="Llast" th:classappend="${session.MenuInfoInterceptor_menu1} =='1' ? Lcurrent"><span><a href="#" onclick="_topMenu.setCurrent(1);">Function</a></span>-->
+<!--                    <ul>-->
+<!--                        <li class="Lfirst"  th:classappend="${session.MenuInfoInterceptor_menu2} =='0' ? Lcurrent"><span><a th:href="@{/function/message/messageForm.do?menu1=1&menu2=0&menu3=0}" onclick="_topMenu.setCurrent(1,0);">Foundation</a></span></li>-->
+<!--                        <li class="Lidx1"  th:classappend="${session.MenuInfoInterceptor_menu2} =='1' ? Lcurrent"><span><a th:href="@{/function/fileupload/fileUploadForm.do?menu1=1&menu2=1&menu3=0}" onclick="_topMenu.setCurrent(1,1);">Presentation</a></span></li>-->
+<!--                        <li class="Llast"  th:classappend="${session.MenuInfoInterceptor_menu2} =='2' ? Lcurrent"><span><a th:href="@{/function/validator/bean/beanValidatorForm.do?menu1=1&menu2=2&menu3=0}" onclick="_topMenu.setCurrent(1,2);">Support</a></span></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+            </ul>
+        </div>
+    </div>
+</th:block>
+
+</html>

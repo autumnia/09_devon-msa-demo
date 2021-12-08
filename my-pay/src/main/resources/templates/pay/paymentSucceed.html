@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:Tag="http://Tag"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}"
+      layout:fragment="content">
+
+<meta charset="UTF-8">
+<title>Pay 조회</title>
+<script type="text/javaScript" language="javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    function fnRetrieveWallet() {
+        document.listForm.action = /*[[@{/paymentView.do?menu1=0&menu2=0&menu3=1}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function fnRetrieveEmployee(num) {
+        document.listForm.from.value = "empThList";
+        document.listForm.mode.value = "update";
+        document.listForm.searchNum.value = document.listForm.num.value;
+        document.listForm.num.value = num;
+        document.listForm.action = /*[[@{/employee/retrieveEmployeeTh.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function fnRetrieveEmployeeForm() {
+        document.listForm.from.value = "empThList";
+        document.listForm.mode.value = "insert";
+        document.listForm.action = /*[[@{/employee/retrieveEmployeeThForm.do?menu1=0&menu2=0&menu3=0}]]*/ 'default';
+        document.listForm.submit();
+    }
+    function checkMessage() {
+        var message = /*[[${param.msg}]]*/ 'default';
+        if(message == "success") {
+            alert(/*[[#{sample.common.message.processSuccess}]]*/ 'default');
+        }
+    }
+    function fnSelectAllOrNot() {
+        var doCheck = document.listForm.checkAll.checked;
+
+        if(document.listForm.selectedCode.length > 1) {
+            for(var inx=0; inx < document.listForm.selectedCode.length; inx++) {
+                document.listForm.selectedCode[inx].checked = doCheck;
+            }
+        } else {
+            document.listForm.selectedCode.checked = doCheck;
+        }
+    }
+    /*]]>*/
+</script>
+<div id="LblockBody">
+    <div id="LblockPageHeader">
+        <div id="LblockPageTitle">
+            <h1>Pay결제</h1>
+        </div>
+
+        <div id="LblockPageLocation">
+            <ul>
+                <li class="Lfirst"><span><a href="#">HOME</a></span></li>
+                <li><span><a href="#">My Pay</a></span></li>
+                <li class="Llast"><span>Pay결제</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="LblockBodyMain">
+        <form modelAttribute="user" th:name="listForm" th:method="post">
+            <div id="LblockSearch">
+                <div>
+                    <div>
+                        <div>
+                            <table>
+                                <colgroup>
+                                    <col style="width: 50%;" />
+                                    <col style="width: 50%;" />
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td th:text="#{pay.processing}"/>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="Lbtn" href="#" onclick="fnRetrieveWallet();"><span th:text='#{pay.back}'/></a>
+        </form>
+        <!--<p th:text="${resultList}"></p>-->
+    </div>
+</div>
+</html>

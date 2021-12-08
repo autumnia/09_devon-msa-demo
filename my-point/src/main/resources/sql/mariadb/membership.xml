@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Membership">
+    <select id="retrieveMembership" resultType="membership">
+	    <![CDATA[
+        select ID, USER_ID, POINT, TYPE
+        from MEMBERSHIP
+        where ID = #{id}
+        ]]>
+	</select>
+
+	<select id="retrieveMembershipByUserId" resultType="membership">
+	    <![CDATA[
+		select ID, USER_ID, POINT, TYPE
+		from MEMBERSHIP
+		where USER_ID = #{userId}
+		]]>
+	</select>
+
+    <update id="updateMembership">
+	   <![CDATA[
+        update MEMBERSHIP
+        set POINT = #{point}, TYPE = #{type}
+        where ID = #{id}
+        ]]>
+	</update>
+</mapper>

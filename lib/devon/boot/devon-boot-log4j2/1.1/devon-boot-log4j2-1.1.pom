@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>devon.boot</groupId>
+		<artifactId>devon-boot-project</artifactId>
+		<version>1.1</version>
+	</parent>
+	<artifactId>devon-boot-log4j2</artifactId>
+	
+	<dependencies>
+		<!-- DevOn Boot Dependencies -->
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-log</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot-autoconfigure</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot-tester</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

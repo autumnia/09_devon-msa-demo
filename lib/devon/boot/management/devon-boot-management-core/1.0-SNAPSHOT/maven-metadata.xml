@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>devon.boot.management</groupId>
+  <artifactId>devon-boot-management-core</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20211206.224512</timestamp>
+      <buildNumber>7</buildNumber>
+    </snapshot>
+    <lastUpdated>20211206224512</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>1.0-20211206.224512-7</value>
+        <updated>20211206224512</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20211206.224512-7</value>
+        <updated>20211206224512</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20211206.224512-7</value>
+        <updated>20211206224512</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

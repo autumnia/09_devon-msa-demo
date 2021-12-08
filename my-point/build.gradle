@@ -1,0 +1,13 @@
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'devon.boot:devon-boot-saga-starter:1.0-SNAPSHOT'
+    implementation 'devon.boot:devon-boot-starter'
+    implementation 'devon.boot.management:devon-boot-management-saga-agent:1.0-SNAPSHOT'
+}
+
+test {
+    useJUnitPlatform()
+}

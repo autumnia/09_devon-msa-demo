@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>devon.boot</groupId>
+		<artifactId>devon-boot-project</artifactId>
+		<version>1.2</version>
+	</parent>
+
+	<artifactId>devon-boot-rui</artifactId>
+	<description>DevOn Boot Rui</description> 
+	<packaging>jar</packaging>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>devonframe</groupId>
+			<artifactId>devon-rui</artifactId>
+		</dependency>
+		
+		<!-- Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.json.bind</groupId>
+			<artifactId>javax.json.bind-api</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot-autoconfigure</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+			<groupId>devon.boot</groupId>
+			<artifactId>devon-boot-tester</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+</project>

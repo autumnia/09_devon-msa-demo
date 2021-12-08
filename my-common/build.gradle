@@ -1,0 +1,17 @@
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'devon.boot:devon-boot-starter'
+    implementation 'devon.boot:devon-boot-saga-starter:1.0-SNAPSHOT'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+    useJUnitPlatform()
+}
